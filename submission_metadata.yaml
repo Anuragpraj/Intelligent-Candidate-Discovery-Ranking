@@ -1,17 +1,17 @@
-team_name: "your-team-name-here"
+team_name: 
 
 primary_contact:
-  name: "Your Name"
-  email: "your@email.com"
-  phone: "+91-XXXXXXXXXX"
+  name: Anurag Kumar Prajapati
+  email: anuragpraj7@gmail.com
+  phone: +91-6265191915
 
 team_members:
-  - name: "Your Name"
-    email: "your@email.com"
-    role: "Team Lead / ML Engineer"
+   name: Anurag Kumar Prajapati
+   email: anuragpraj7@gmail.com
+   role: Team Lead 
 
-github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+github_repo: https://github.com/Anuragpraj/Intelligent-Candidate-Discovery-Ranking
+sandbox_link: https://colab.research.google.com/drive/1y1CsqH_yTQUFSNI7431V9tU6voTSOMW3?usp=sharing
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 compute:
