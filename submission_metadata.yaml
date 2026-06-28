@@ -1,0 +1,51 @@
+team_name: "your-team-name-here"
+
+primary_contact:
+  name: "Your Name"
+  email: "your@email.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Your Name"
+    email: "your@email.com"
+    role: "Team Lead / ML Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local CPU machine"
+  cpu_cores: 4
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Ubuntu / macOS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude to assist with architecture design and code review.
+  All candidate data was processed locally. No candidate data was sent to any LLM.
+  The scoring logic, weights, and disqualifier rules were designed and iterated by the team.
+
+methodology_summary: |
+  Rule-based multi-component ranker with trust-weighted skill scoring and behavioral
+  signal modifiers. Six components: Title & Career Fit (28%), Skills Match (25%),
+  Experience Band (15%), Behavioral Signals (15%), Location (12%), Education (5%).
+  Skills scoring uses a trust multiplier (proficiency × log(endorsements) × log(duration_months))
+  to defeat keyword stuffers. Disqualifiers (pure consulting career, non-technical titles,
+  CV-only backgrounds) apply a 75% score penalty. Honeypot detection flags impossible
+  profiles (e.g., ≥5 expert skills with 0 duration + 0 endorsements). Full 100K run in ~40s
+  on CPU with no network calls or GPU.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
